@@ -19,7 +19,7 @@ import _thread
 sys.path.insert(0, os.getcwd())
 
 
-from opr import Cfg
+from . import Cfg
 
 
 Cfg.mod = "bsc"
@@ -28,9 +28,9 @@ Cfg.verbose = False
 Cfg.version = 241
 
 
-from opr import Broker, Command, Event, Logging, Persist, Reactor
-from opr import banner, parse, scan, waiter
-from opr import modules
+from . import Broker, Command, Event, Logging, Persist, Reactor
+from . import banner, parse, scan, waiter
+from . import modules
 
 
 Persist.workdir = os.path.expanduser(f"~/.{Cfg.name}")

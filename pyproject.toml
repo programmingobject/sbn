@@ -36,13 +36,9 @@ packages = [
             "sbn.modules"
            ]
 zip-safe = true
-script-files = ["bin/sbn",]
 
-
-bevestigd.jpg      ECHAhaldol.png     informed.jpg  OTP2.png    verbatim2.png
-ECHAabilify.png    ECHAzyprexa.png    kamer.png     skull3.png
-ECHAclozapine.png  genocideblack.png  OTP1.png      skull.jpg
-
+[project.scripts]
+sbn = "__main__.main"
 
 [tool.setuptools.data-files]
 "share/doc/sbn" = [
