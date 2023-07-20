@@ -19,7 +19,7 @@ from .. import laps, launch, keys
 
 
 def start():
-    time.sleep(60.0)
+    time.sleep(30.0)
     for key in keys(oorzaken):
         val = getattr(oorzaken, key, None)
         if val and int(val) > 10000:
@@ -277,6 +277,9 @@ oorzaak = Object(zip(oor, aantal))
 oorzaken = Object()
 
 
+# UTILITY
+
+
 def boot():
     _nr = -1
     for key in keys(oorzaak):
@@ -354,6 +357,9 @@ def iswanted(k, line):
     return False
 
 
+# CALLBACKS
+
+
 def cbnow(evt):
     delta = time.time() - STARTTIME
     txt = laps(delta) + " "
@@ -386,6 +392,9 @@ def cbstats(evt):
                                                                nryear,
                                                               )
         Broker.announce(txt)
+
+
+# COMMANDS
 
 
 def now(event):
@@ -436,6 +445,9 @@ def tpc(event):
                 bot.topic(channel, txt)
         except AttributeError:
             pass
+
+
+# RUNTIME
 
 
 boot()

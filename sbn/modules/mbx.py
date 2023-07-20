@@ -64,6 +64,9 @@ class Email(Object):
         return len(self.__dict__)
 
 
+# UTILITY
+
+
 def to_date(date):
     date = date.replace("_", ":")
     res = date.split()
@@ -74,7 +77,12 @@ def to_date(date):
         if "-" in res[3]:
             raise ValueError
         int(res[3])
-        ddd = "{:4}-{:#02}-{:#02} {:6}".format(res[3], monthint[res[2]], int(res[1]), res[4])
+        ddd = "{:4}-{:#02}-{:#02} {:6}".format(
+                                               res[3],
+                                               monthint[res[2]],
+                                               int(res[1]),
+                                               res[4]
+                                              )
     except (IndexError, KeyError, ValueError) as ex:
         try:
             if "+" in res[4]:
@@ -82,22 +90,42 @@ def to_date(date):
             if "-" in res[4]:
                 raise ValueError from ex
             int(res[4])
-            ddd = "{:4}-{:#02}-{:02} {:6}".format(res[4], monthint[res[1]], int(res[2]), res[3])
+            ddd = "{:4}-{:#02}-{:02} {:6}".format(
+                                                  res[4],
+                                                  monthint[res[1]],
+                                                  int(res[2]),
+                                                  res[3]
+                                                 )
         except (IndexError, KeyError, ValueError):
             try:
-                ddd = "{:4}-{:#02}-{:02} {:6}".format(res[2], monthint[res[1]], int(res[0]), res[3])
+                ddd = "{:4}-{:#02}-{:02} {:6}".format(
+                                                      res[2],
+                                                      monthint[res[1]],
+                                                      int(res[0]),
+                                                      res[3]
+                                                     )
             except (IndexError, KeyError):
                 try:
-                    ddd = "{:4}-{:#02}-{:02}".format(res[2], monthint[res[1]], int(res[0]))
+                    ddd = "{:4}-{:#02}-{:02}".format(
+                                                     res[2],
+                                                     monthint[res[1]],
+                                                     int(res[0])
+                                                    )
                 except (IndexError, KeyError):
                     try:
-                        ddd = "{:4}-{:#02}".format(res[2], monthint[res[1]])
+                        ddd = "{:4}-{:#02}".format(
+                                                   res[2],
+                                                   monthint[res[1]]
+                                                  )
                     except (IndexError, KeyError):
                         try:
                             ddd = "{:4}".format(res[2])
                         except (IndexError, KeyError):
                             ddd = ""
     return ddd
+
+
+# COMMANDS
 
 
 def cor(event):

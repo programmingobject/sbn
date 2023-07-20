@@ -15,6 +15,21 @@ import time
 import types
 
 
+def __dir__():
+    return (
+            "banner",
+            "cdir",
+            "laps",
+            "name",
+            "skip",
+            "spl",
+            "strip"
+           )
+
+
+__all__ = __dir__()
+
+
 def banner(names, version):
     times = time.ctime(time.time())
     return f"{names.upper()} {version} {times}"
@@ -85,6 +100,13 @@ def name(obj) -> str:
         nme = obj.__name__
         return f'{clz}.{nme}'
     return None
+
+
+def skip(txt, skipping) -> bool:
+    for skip in spl(skipping):
+        if skip in txt:
+            return True
+    return False
 
 
 def spl(txt) -> []:

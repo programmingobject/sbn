@@ -34,7 +34,6 @@ class Command(Object):
 
     cmds = Object()
 
-
     @staticmethod
     def add(func):
         Command.cmds[func.__name__] = func
@@ -73,13 +72,7 @@ class Command(Object):
                 Command.add(cmd)
 
 
-def scan(
-         pkg,
-         mods,
-         init=None,
-         doall=False,
-         wait=False
-        ) -> None:
+def scan(pkg, mods, init=None, doall=False, wait=False) -> None:
     path = pkg.__path__[0]
     if doall:
         modlist = [
@@ -90,11 +83,7 @@ def scan(
         mods = ",".join(sorted( modlist ))
     threads = []
     for modname in spl(mods):
-        module = getattr(
-                         pkg,
-                         modname,
-                         None
-                        )
+        module = getattr(pkg, modname, None)
         if module:
             Command.scan(module)
         if init and "start" in dir(module):
