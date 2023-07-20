@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "sbn"
 description = "Skull, Bones and Number (OTP-CR-117/19)"
-version = "20"
+version = "30"
 authors = [
     {name = "Bart Thate", email = "bthate@dds.nl" },
 ]
@@ -39,6 +39,11 @@ zip-safe = true
 script-files = ["bin/sbn",]
 
 
+bevestigd.jpg      ECHAhaldol.png     informed.jpg  OTP2.png    verbatim2.png
+ECHAabilify.png    ECHAzyprexa.png    kamer.png     skull3.png
+ECHAclozapine.png  genocideblack.png  OTP1.png      skull.jpg
+
+
 [tool.setuptools.data-files]
 "share/doc/sbn" = [
           "files/ECHAabilify.png",
@@ -47,8 +52,13 @@ script-files = ["bin/sbn",]
           "files/ECHAzyprexa.png",
           "files/informed.jpg",
           "files/verbatim2.png",
+          "files/skull.jpg",
           "files/skull3.png",
           "files/bevestigd.jpg",
+          "files/genocideblack.jpg",
+          "files/kamer.png",
+          "files/OTP1.png",
+          "files/OTP2.png"
          ]
 
 "share/doc/sbn/pdf" =  [
