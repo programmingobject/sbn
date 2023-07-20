@@ -23,9 +23,9 @@ from . import Cfg
 
 
 Cfg.mod = "bsc"
-Cfg.name = "opr"
+Cfg.name = "sbn"
 Cfg.verbose = False
-Cfg.version = 241
+Cfg.version = 30
 
 
 from . import Broker, Command, Event, Logging, Persist, Reactor
@@ -104,6 +104,10 @@ def main():
         Command.handle(evt)
 
 
-if __name__ == "__main__":
+def wrapped():
     wrap(main)
     waiter()
+
+
+if __name__ == "__main__":
+    wrapped()

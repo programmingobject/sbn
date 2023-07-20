@@ -38,7 +38,7 @@ packages = [
 zip-safe = true
 
 [project.scripts]
-sbn = "__main__.main"
+sbn = "sbn.__main__:wrapped"
 
 [tool.setuptools.data-files]
 "share/doc/sbn" = [
@@ -51,7 +51,7 @@ sbn = "__main__.main"
           "files/skull.jpg",
           "files/skull3.png",
           "files/bevestigd.jpg",
-          "files/wallpaper.jpg",
+          "files/wallpaper.png",
           "files/kamer.png",
           "files/OTP1.png",
           "files/OTP2.png",
