@@ -5,26 +5,17 @@
 "clean directories"
 
 
-# IMPORTS
+__author__ = "Bart Thate <programmingobject@gmail.com>"
 
 
 import os
 import sys
 
 
-# DEFINEs
-
-
-SKIP = [
-        "env",
-       ]
-
-
-# UTILITY
+SKIP = ["env",]
 
 
 def loop(path, txt):
-    "loop over directories"
     old = os.getcwd()
     os.chdir(path)
     for fnn in os.listdir(path):
@@ -44,17 +35,12 @@ def loop(path, txt):
 
 
 def popen(txt):
-    "run in popen"
     for line in os.popen(txt).readlines():
         print(line.rstrip())
         sys.stdout.flush()
 
 
-# RUNTIME
-
-
 def main():
-    """main program"""
     popen("rm -fR DEAD* build dist MANIFEST *.egg-info *.whl")
     popen("rm -fR .pytest_cache .test  __pycache__ *~ .*~")
     loop(".", "rm -fR *~")

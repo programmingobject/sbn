@@ -11,11 +11,16 @@ __author__ = "Bart Thate <programmingobject@gmail.com>"
 import os
 
 
+os.environ["PATH"] += ":bin"
+
+
 def popen(txt):
     for line in os.popen(txt).readlines():
         print(line.strip())
 
 
+print("\nCLEAN\n")
+popen("clean")
 print("\nSETUPTOOLS\n")
 popen("python3 setup.py sdist")
 print("\nWHEEL\n")
