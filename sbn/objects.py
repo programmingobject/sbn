@@ -65,7 +65,7 @@ class Object:
         return self.__dict__.__delitem__(key)
 
     def __getattr__(self, key):
-        return self.__dict__.get(key, Object.__default__)
+        return self.__dict__.get(key, self.__default__)
 
     def __getitem__(self, key):
         return self.__dict__.__getitem__(key)
