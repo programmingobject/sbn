@@ -2,7 +2,7 @@
 # This file is placed in the Public Domain.
 
 
-"cleanup"
+"clean directories"
 
 
 # IMPORTS
@@ -12,17 +12,39 @@ import os
 import sys
 
 
-# DEFINES
+# DEFINEs
 
 
-os.environ["PATH"] += ":fin"
+SKIP = [
+        "env",
+       ]
 
 
 # UTILITY
 
 
+def loop(path, txt):
+    "loop over directories"
+    old = os.getcwd()
+    os.chdir(path)
+    for fnn in os.listdir(path):
+        if fnn in SKIP:
+            continue
+        old = os.getcwd()
+        fpath = os.path.abspath(os.path.join(path, fnn))
+        if os.path.isdir(fpath):
+            loop(fpath, txt)
+        if not os.path.isdir(fpath):
+            continue
+        os.chdir(fpath)
+        popen(txt)
+        os.chdir(old)
+        #os.chdir("..")
+    os.chdir(old)
+
+
 def popen(txt):
-    """run in popen"""
+    "run in popen"
     for line in os.popen(txt).readlines():
         print(line.rstrip())
         sys.stdout.flush()
@@ -35,8 +57,8 @@ def main():
     """main program"""
     popen("rm -fR DEAD* build dist MANIFEST *.egg-info *.whl")
     popen("rm -fR .pytest_cache .test  __pycache__ *~ .*~")
-    popen("loop . rm -fR *~")
-    popen("loop . rm -fR __pycache__")
+    loop(".", "rm -fR *~")
+    loop(".", "rm -fR __pycache__")
 
 
 if __name__ == "__main__":

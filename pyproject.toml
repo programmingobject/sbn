@@ -51,10 +51,11 @@ sbn = "__main__.main"
           "files/skull.jpg",
           "files/skull3.png",
           "files/bevestigd.jpg",
-          "files/genocideblack.jpg",
+          "files/wallpaper.jpg",
           "files/kamer.png",
           "files/OTP1.png",
-          "files/OTP2.png"
+          "files/OTP2.png",
+          "files/genocide.jpg"
          ]
 
 "share/doc/sbn/pdf" =  [
