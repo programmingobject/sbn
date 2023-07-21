@@ -104,8 +104,8 @@ def name(obj) -> str:
 
 
 def skip(txt, skipping) -> bool:
-    for skip in spl(skipping):
-        if skip in txt:
+    for skp in spl(skipping):
+        if skp in txt:
             return True
     return False
 

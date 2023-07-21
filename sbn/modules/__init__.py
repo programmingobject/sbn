@@ -16,7 +16,7 @@ def __dir__():
     return (
             "bsc",
             "irc",
-            "log"
+            "log",
             "mbx",
             "mdl",
             "req",

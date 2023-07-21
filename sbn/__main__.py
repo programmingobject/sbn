@@ -80,10 +80,10 @@ def daemon():
         os._exit(0)
     os.setsid()
     os.umask(0)
-    sis = open('/dev/null', 'r')
+    sis = open('/dev/null', 'r', encoding="utf-8")
     os.dup2(sis.fileno(), sys.stdin.fileno())
-    sos = open('/dev/null', 'a+')
-    ses = open('/dev/null', 'a+')
+    sos = open('/dev/null', 'a+', encoding="utf-8")
+    ses = open('/dev/null', 'a+', encoding="utf-8")
     os.dup2(sos.fileno(), sys.stdout.fileno())
     os.dup2(ses.fileno(), sys.stderr.fileno())
 

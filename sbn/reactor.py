@@ -23,7 +23,6 @@ from .threads import launch
 def __dir__():
     return (
             'Reactor',
-            "dispatch"
            )
 
 
