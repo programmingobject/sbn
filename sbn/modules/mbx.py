@@ -1,6 +1,7 @@
 # This file is placed in the Public Domain.
 #
 # pylint: disable=C,I,R,W0212,W0401
+# flake8: noqa=C901
 
 
 "mailbox"

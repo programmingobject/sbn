@@ -1,6 +1,7 @@
 # This file is placed in the Public Domain.
 #
 # pylint: disable=C,I,R,E0402
+# flake8: noqa=C901
 
 
 "deconding objects"
@@ -45,7 +46,7 @@ class ObjectDecoder(json.JSONDecoder):
 
 
 def load(fpt, *args, **kw):
-    return json.load(fpt ,*args ,cls=ObjectDecoder, **kw )
+    return json.load(fpt, *args, cls=ObjectDecoder, **kw )
 
 
 def loads(string, *args, **kw):

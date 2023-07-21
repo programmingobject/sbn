@@ -48,7 +48,7 @@ class Command(Object):
                     func(evt)
                     evt.show()
                 except Exception as ex:
-                    exc = ex.with_traceback( ex.__traceback__ )
+                    exc = ex.with_traceback(ex.__traceback__)
                     Errors.errors.append(exc)
         evt.ready()
 
@@ -74,9 +74,9 @@ def scan(pkg, mods, init=None, doall=False, wait=False) -> None:
         modlist = [
                    x[:-3] for x in os.listdir(path)
                    if x.endswith(".py")
-                   and x not in [ "__init__.py", "__main__.py"]
+                   and x not in ["__init__.py", "__main__.py"]
                   ]
-        mods = ",".join(sorted( modlist ))
+        mods = ",".join(sorted(modlist))
     threads = []
     for modname in spl(mods):
         module = getattr(pkg, modname, None)

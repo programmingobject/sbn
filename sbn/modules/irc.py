@@ -1,6 +1,7 @@
 # This file is placed in the Public Domain.
 #
 # pylint: disable=C,I,R,W0401
+# pyflake: ignore=C901
 
 
 "internet relay chat"
@@ -22,7 +23,7 @@ import threading
 
 from .. import Broker, Cfg, Command, Errors, Event, Logging, Object, Reactor
 from .. import edit, find, fntime, keys, laps, last, prt, write
-from .. import launch, parse, update
+from .. import launch, update
 
 
 from ..locking import saylock

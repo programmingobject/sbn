@@ -2,6 +2,7 @@
 #
 # pylint: disable=C,I,R,W0613,E1101,E0402,W0401
 # pylama: ignore=E225,E501
+# flake8: noqa=E501
 
 
 "genocide model of the netherlands"
@@ -32,7 +33,7 @@ def start():
     launch(daily, name="daily")
 
 
-DAY=24*60*60
+DAY = 24*60*60
 YEAR = 365*DAY
 SOURCE = "https://github.com/bthate/genocide"
 STARTDATE = "2020-01-01 00:00:00"
@@ -235,7 +236,7 @@ aantal = """
          """.split(";")
 
 
-#oorzaak.Suicide = 1859
+# oorzaak.Suicide = 1859
 
 
 aliases = {}

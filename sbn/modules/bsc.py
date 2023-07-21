@@ -75,7 +75,11 @@ def flt(event):
 def mod(event):
     from .. import modules
     path = modules.__path__[0]
-    modlist = [x[:-3] for x in os.listdir(path) if x.endswith(".py") and x not in ["__main__.py", "__init__.py"]]
+    modlist = [
+               x[:-3] for x in os.listdir(path)
+               if x.endswith(".py")
+               and x not in ["__main__.py", "__init__.py"]
+              ]
     mods = ",".join(sorted(modlist))
     event.reply(mods)
 

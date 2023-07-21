@@ -69,7 +69,7 @@ class ObjectEncoder(json.JSONEncoder):
         return json.JSONEncoder.iterencode(self, o, _one_shot)
 
 
-def dump(*args , **kw)-> None:
+def dump(*args, **kw) -> None:
     kw["cls"] = ObjectEncoder
     return json.dump(*args, **kw)
 

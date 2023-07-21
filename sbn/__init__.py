@@ -1,9 +1,10 @@
 # This file is placed in the Public Domain.
 #
 # pylint: disable=C,I,R,W0401,W0614
+# flake8: noqa=F401
 
 
-"object programming runtime"
+"Skull, Bones and Number (OTP-CR-117/19)"
 
 
 __author__ = "Bart Thate <programmingobject@gmail.com>"

@@ -9,7 +9,7 @@
 __author__ = "Bart Thate <programmingobject@gmail.com>"
 
 
-from .objects  import Object, items, update
+from .objects import Object, items, update
 from .persist import read, write
 
 

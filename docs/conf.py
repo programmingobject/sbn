@@ -3,9 +3,12 @@
 #
 # pylint: disable=C,I,R
 # pylama: disable=E231
-
+# flake8: noqa=E402,E501
 
 "Skull, Bones and Number (OTP-CR-117/19)"
+
+
+__author__ = "Bart Thate <programmingobject@gmail.com>"
 
 
 NAME = "sbn"
@@ -37,24 +40,24 @@ release = '%s' % VERSION
 language = 'en'
 today = ''
 today_fmt = '%B %d, %Y'
-needs_sphinx='1.7'
+needs_sphinx = '1.7'
 exclude_patterns = ['_build', '_templates', '_source', 'Thumbs.db', '.DS_Store']
 source_suffix = '.rst'
 source_encoding = 'utf-8-sig'
 modindex_common_prefix = [""]
 keep_warnings = False
-templates_path=['_templates']
+templates_path = ['_templates']
 add_function_parentheses = False
 add_module_names = False
 show_authors = False
 pygments_style = 'colorful'
-extensions=[
-    'sphinx.ext.autodoc',
-    'sphinx.ext.autosummary',
-    'sphinx.ext.viewcode',
-    'sphinx.ext.todo',
-    'sphinx.ext.githubpages'
-]
+extensions = [
+              'sphinx.ext.autodoc',
+              'sphinx.ext.autosummary',
+              'sphinx.ext.viewcode',
+              'sphinx.ext.todo',
+              'sphinx.ext.githubpages'
+             ]
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -106,7 +109,7 @@ intersphinx_mapping = {
                        'python': ('https://docs.python.org/3', 'objects.inv'),
                        'sphinx': ('http://sphinx.pocoo.org/', None),
                       }
-intersphinx_cache_limit=1
+intersphinx_cache_limit = 1
 
 
 rst_prolog = '''.. image:: genocide.png
@@ -135,6 +138,6 @@ autodoc_default_flags = ['members', 'undoc-members', 'private-members', "importe
 autodoc_member_order = 'groupwise'
 autodoc_docstring_signature = True
 autoclass_content = "class"
-nitpick_ignore=[
-                ('py:class', 'builtins.BaseException'),
-               ]
+nitpick_ignore = [
+                  ('py:class', 'builtins.BaseException'),
+                 ]
