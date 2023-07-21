@@ -58,13 +58,11 @@ sbn = "sbn.__main__:wrapped"
           "docs/banner.png",
           "docs/ECHAabilify.png",
           "docs/ECHAzyprexa.png",
-          "docs/genocide3.png",
           "docs/guilty.rst",
           "docs/kamer.png",
           "docs/OTP2.png",
           "docs/request.rst",
           "docs/skull3.png",
-          "docs/skullnr2.jpg",
           "docs/verbatim.rst",
           "docs/writings.rst",
           "docs/bevestigd.jpg",
@@ -73,8 +71,6 @@ sbn = "sbn.__main__:wrapped"
           "docs/index.rst",
           "docs/manual.rst",
           "docs/requirements.in",
-          "docs/skullagain.jpg",
-          "docs/skullnr.jpg",
           "docs/wallpaper.png",
          ]
 
