@@ -4,10 +4,10 @@
 # flake8: noqa=E402
 
 
-"object programming runtime"
+"runtime"
 
 
-__author__ = "Bart Thate <programmingobject@gmail.com>"
+__author__ = "Bart Thate <skullbonesandnumber@gmail.com>"
 
 
 import os

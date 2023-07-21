@@ -7,7 +7,7 @@
 "Skull, Bones and Number (OTP-CR-117/19)"
 
 
-__author__ = "Bart Thate <programmingobject@gmail.com>"
+__author__ = "Bart Thate <skullbonesandnumber@gmail.com>"
 
 
 from .command import Command, scan

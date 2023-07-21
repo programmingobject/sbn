@@ -4,10 +4,10 @@
 # pylint: disable=C,I,R,E0611,I1101,W0401,W0614
 
 
-"self created clients test"
+"tinder tests"
 
 
-__author__ = "Bart Thate <programmingobject@gmail.com>"
+__author__ = "Bart Thate <skullbonesandnumber@gmail.com>"
 
 
 import os

@@ -8,7 +8,7 @@ name = "sbn"
 description = "Skull, Bones and Number (OTP-CR-117/19)"
 version = "30"
 authors = [
-    {name = "Bart Thate", email = "programmingobject@gmail.com" },
+    {name = "Bart Thate", email = "skullbonesandnumber@gmail.com" },
 ]
 readme = "README.rst"
 license = { text="Public Domain"}
