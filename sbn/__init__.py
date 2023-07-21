@@ -22,7 +22,7 @@ from .persist import Persist, find, fntime, last, read, write
 from .reactor import Reactor
 from .repeats import Repeater
 from .threads import launch
-from .utility import banner, laps, spl
+from .utility import banner, laps, spl, wait
 
 
 from .brokers import Broker
@@ -56,6 +56,7 @@ def __dir__():
             "read",
             "scan",
             "spl",
+            "wait",
             "waiter",
             "write"
            )

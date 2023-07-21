@@ -383,6 +383,8 @@ class IRC(Reactor, Output):
         spl = obj.txt.split()
         if len(spl) > 1:
             obj.args = spl[1:]
+        if obj.args:
+            obj.rest = " ".join(obj.args)
         obj.orig = repr(self)
         obj.txt = obj.txt.strip()
         obj.type = obj.command
@@ -624,7 +626,6 @@ def cb_privmsg(evt):
         if bot.cfg.users and not Users.allowed(evt.origin, 'USER'):
             return
         Logging.debug(f"command from {evt.origin}: {evt.txt}")
-        parse(evt, evt.txt)
         Command.handle(evt)
 
 

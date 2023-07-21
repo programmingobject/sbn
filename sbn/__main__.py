@@ -29,7 +29,7 @@ Cfg.version = 30
 
 
 from . import Broker, Command, Event, Logging, Persist, Reactor
-from . import banner, parse, scan, waiter
+from . import banner, parse, scan, wait, waiter
 from . import modules
 
 
@@ -73,6 +73,20 @@ def cprint(txt):
     sys.stdout.flush()
 
 
+def daemon():
+    pid = os.fork()
+    if pid != 0:
+        os._exit(0)
+    os.setsid()
+    os.umask(0)
+    sis = open('/dev/null', 'r')
+    os.dup2(sis.fileno(), sys.stdin.fileno())
+    sos = open('/dev/null', 'a+')
+    ses = open('/dev/null', 'a+')
+    os.dup2(sos.fileno(), sys.stdout.fileno())
+    os.dup2(ses.fileno(), sys.stderr.fileno())
+
+
 def wrap(func) -> None:
     old = termios.tcgetattr(sys.stdin.fileno())
     try:
@@ -90,7 +104,11 @@ def main():
     if "v" in Cfg.opts:
         Logging.raw = print
         Logging.verbose = True
-    if "c" in Cfg.opts:
+    if "d" in Cfg.opts:
+        daemon()
+        scan(modules, Cfg.mod, True, "a" in Cfg.opts)
+        wait()
+    elif "c" in Cfg.opts:
         print(banner(Cfg.name, Cfg.version))
         csl = Console()
         scan(modules, Cfg.mod, True, "a" in Cfg.opts)

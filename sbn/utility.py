@@ -23,7 +23,8 @@ def __dir__():
             "name",
             "skip",
             "spl",
-            "strip"
+            "strip",
+            "wait"
            )
 
 
@@ -119,3 +120,8 @@ def spl(txt) -> []:
 
 def strip(path) -> str:
     return os.sep.join(path.split(os.sep)[-4:])
+
+
+def wait():
+    while 1:
+        time.sleep(1.0)

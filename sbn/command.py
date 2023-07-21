@@ -42,18 +42,14 @@ class Command(Object):
     def handle(evt):
         if "txt" in evt:
             parse(evt, evt.txt)
-            func = get(
-                       Command.cmds,
-                       evt.cmd,
-                       None
-                      )
+            func = get(Command.cmds, evt.cmd, None)
             if func:
                 try:
-                    func( evt )
+                    func(evt)
                     evt.show()
                 except Exception as ex:
                     exc = ex.with_traceback( ex.__traceback__ )
-                    Errors.errors.append( exc ) 
+                    Errors.errors.append(exc)
         evt.ready()
 
     @staticmethod
