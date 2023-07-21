@@ -1,7 +1,7 @@
 # This file is placed in the Public Domain.
 #
 # pylint: disable=C,I,R,W0401
-# pyflake: ignore=C901
+# flake8: noqa=C901
 
 
 "internet relay chat"
