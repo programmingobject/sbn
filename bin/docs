@@ -13,7 +13,7 @@ import subprocess
 import sys
 
 
-os.environ["PATH"] += ":bin"
+os.environ["PATH"] = "bin:" + os.environ["PATH"]
 
 
 def popen(txt):
@@ -30,12 +30,11 @@ def popen(txt):
         proc.wait()
 
 
-popen("clean")
+#popen("clean")
 
 
 if not os.path.exists("env"):
     popen("env")
+    popen("env/bin/python3 -m pip install -r docs/requirements.txt --upgrade")
 
-
-popen("env/bin/python3 -m pip install -r docs/requirements.txt --upgrade")
 popen("env/bin/python3 env/bin/sphinx-build docs html")
