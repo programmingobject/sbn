@@ -43,6 +43,7 @@ def popen(txt):
 def main():
     popen("rm -fR DEAD* build dist MANIFEST *.egg-info *.whl")
     popen("rm -fR .pytest_cache .test  __pycache__ *~ .*~")
+    popen("rm -fR env html docs/sbn*.rst")
     loop(".", "rm -fRv *~")
     loop(".", "rm -fR __pycache__")
 
