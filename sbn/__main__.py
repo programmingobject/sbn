@@ -116,7 +116,7 @@ def main():
         csl.loop()
     else:
         cli = CLI()
-        scan(modules, Cfg.mod, False, True)
+        scan(modules, Cfg.mod)
         evt = Event()
         evt.orig = repr(cli)
         evt.txt = Cfg.otxt
